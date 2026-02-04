@@ -17,10 +17,18 @@ async function main() {
     body: JSON.stringify({
       parent: { database_id: databaseId },
       properties: {
-        Name: { title: [{ text: { content: "GitHub Actions ping" } }] },
-        Status: { select: { name: "OK" } },
-        Message: { rich_text: [{ text: { content: "Hello from GitHub Actions ✅" } }] },
-        RanAt: { date: { start: new Date().toISOString() } },
+        プロジェクト名: {
+          title: [{ text: { content: "GitHub Actions ping" } }],
+        },
+        ステータス: {
+          select: { name: "進行中" },
+        },
+        説明・詳細: {
+          rich_text: [{ text: { content: "Hello from GitHub Actions ✅" } }],
+        },
+        開始日: {
+          date: { start: new Date().toISOString() },
+        },
       },
     }),
   });
@@ -30,9 +38,9 @@ async function main() {
     console.error(data);
     process.exit(1);
   }
+
   console.log("Created page:", data.id);
 }
 
 main();
-
 
