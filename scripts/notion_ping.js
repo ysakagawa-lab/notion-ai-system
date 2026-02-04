@@ -1,4 +1,3 @@
-console.log("notion_ping.js running (jp props) v2");
 const notionToken = process.env.NOTION_TOKEN;
 const databaseId = process.env.NOTION_DATABASE_ID;
 
