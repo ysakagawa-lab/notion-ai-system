@@ -12,7 +12,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-
+      - name: Debug - show HEAD and script content
+        run: |
+          echo "GITHUB_SHA=$GITHUB_SHA"
+          git rev-parse HEAD
+          git log -1 --oneline
+          ls -la scripts
+          echo "---- scripts/notion_ping.js head ----"
+          sed -n '1,120p' scripts/notion_ping.js
+          echo "---- grep props ----"
+          grep -n "プロジェクト名\|ステータス\|Name\|Status\|Message\|RanAt" -n scripts/notion_ping.js || true
       - name: Run Notion ping
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
