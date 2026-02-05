@@ -6,6 +6,10 @@
 - 一括適用スクリプト: `scripts/sportspulse_phase1_design.sh`
 - 実行手順: `docs/sportspulse_phase1_design.md`
 
+### 公開前おすすめ：デザイン自動アップデート
+- 自動更新スクリプト: `scripts/sportspulse_design_refresh.sh`
+- 実行手順: `docs/sportspulse_design_refresh.md`
+
 ### ② 記事案テキストから投稿/デザイン/Ad一括処理
 - 一括処理スクリプト: `scripts/sportspulse_phase2_content_ops.sh`
 - 実行手順: `docs/sportspulse_phase2_content_ops.md`
